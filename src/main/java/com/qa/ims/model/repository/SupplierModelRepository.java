@@ -9,7 +9,4 @@ import com.qa.ims.model.SupplierModel;
 @Repository
 public interface SupplierModelRepository extends JpaRepository<SupplierModel, Long> {
 	
-	@Query("Select * From SupplierModel Where supplierModel = 1?")
-	public void persistSupplier(SupplierModel supplierModel);
-	
 }
