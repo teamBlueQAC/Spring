@@ -1,5 +1,6 @@
 package com.qa.ims.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Order {
@@ -8,6 +9,7 @@ public class Order {
 	private double total;
 	private Date date;
 	private Date dispatchDate;
+	private ArrayList<Product> productList = new ArrayList<Product>();
 	//private OrderStatus orderStatus;
 	
 	public Order(){
@@ -52,7 +54,18 @@ public class Order {
 	public void setDispatchDate(Date dispatchDate) {
 		this.dispatchDate = dispatchDate;
 	}
+	/*
+	public ArrayList<Product> getOrderList(){
+		return productList;
+	}
 	
-	
+	public void setOrderList(ArrayList<Product> productList){
+		this.productList = productList;
+	}
 
+	public void addProduct(Product product){
+		productList.add(product);
+		productList.sort();
+	}
+	*/
 }
