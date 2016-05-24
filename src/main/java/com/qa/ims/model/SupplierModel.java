@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "suppliers")
@@ -13,6 +14,7 @@ public class SupplierModel {
 	@GeneratedValue
 	private long id;
 
+	@NotNull
 	private String name;
 
 	public long getId() {
@@ -33,6 +35,10 @@ public class SupplierModel {
 	
 	public SupplierModel(String name){
 		this.name = name;
+	}
+	
+	public SupplierModel(){
+		
 	}
 
 }
