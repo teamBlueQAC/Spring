@@ -53,5 +53,26 @@ public class SupplierControllerTest {
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 	}
+	
+	@Test
+	public void testDeleteSupplier(){
+		if(supplierController.getAllSuppliers() != null){
+			supplierController.deleteAllSuppliers();
+		}
+		supplierController.persistSupplier(supplierModel);
+		assertNotNull(supplierController.getAllSuppliers());
+		supplierController.deleteSupplier(supplierModel);
+		assertSame(supplierController.findSupplierByName("Test").isEmpty(), true);
+	}
+	@Test
+	public void testDeleteAllSuppliers(){
+		if(supplierController.getAllSuppliers() != null){
+			supplierController.deleteAllSuppliers();
+		}
+		supplierController.persistSupplier(supplierModel);
+		assertNotNull(supplierController.getAllSuppliers());
+		supplierController.deleteAllSuppliers();
+		assertSame(supplierController.getAllSuppliers().isEmpty(), true);
+	}
 
 }
