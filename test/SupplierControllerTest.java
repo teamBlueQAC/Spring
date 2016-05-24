@@ -31,7 +31,7 @@ public class SupplierControllerTest {
 
 	@Test
 	public void testPersistSupplier() {
-		checkIfSuppliersEmpty();
+		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		List<SupplierModel> sm = supplierRepository.findAll();
 		assertNotEquals(sm, null);
@@ -39,21 +39,21 @@ public class SupplierControllerTest {
 
 	@Test
 	public void testFindSupplierByName() {
-		checkIfSuppliersEmpty();
+		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.findSupplierByName("Test"));
 	}
 
 	@Test
 	public void testGetAllSuppliers() {
-		checkIfSuppliersEmpty();
+		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 	}
 	
 	@Test
 	public void testDeleteSupplier(){
-		checkIfSuppliersEmpty();
+		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 		supplierController.deleteSupplier(supplierModel);
@@ -61,14 +61,14 @@ public class SupplierControllerTest {
 	}
 	@Test
 	public void testDeleteAllSuppliers(){
-		checkIfSuppliersEmpty();
+		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 		supplierController.deleteAllSuppliers();
 		assertSame(supplierController.getAllSuppliers().isEmpty(), true);
 	}
 	
-	public void checkIfSuppliersEmpty(){
+	public void checkIfSuppliersNotEmpty(){
 		if(supplierController.getAllSuppliers() != null){
 			supplierController.deleteAllSuppliers();
 		}
