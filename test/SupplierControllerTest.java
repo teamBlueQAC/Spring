@@ -27,11 +27,11 @@ public class SupplierControllerTest {
 	@Before
 	public void setUp() {
 		supplierModel = new SupplierModel("Test");
+		checkIfSuppliersNotEmpty();
 	}
 
 	@Test
 	public void testPersistSupplier() {
-		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		List<SupplierModel> sm = supplierRepository.findAll();
 		assertNotEquals(sm, null);
@@ -39,21 +39,18 @@ public class SupplierControllerTest {
 
 	@Test
 	public void testFindSupplierByName() {
-		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.findSupplierByName("Test"));
 	}
 
 	@Test
 	public void testGetAllSuppliers() {
-		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 	}
 	
 	@Test
 	public void testDeleteSupplier(){
-		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 		supplierController.deleteSupplier(supplierModel);
@@ -61,7 +58,6 @@ public class SupplierControllerTest {
 	}
 	@Test
 	public void testDeleteAllSuppliers(){
-		checkIfSuppliersNotEmpty();
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.getAllSuppliers());
 		supplierController.deleteAllSuppliers();
