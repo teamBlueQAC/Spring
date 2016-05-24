@@ -15,6 +15,8 @@ public class SupplierController {
 	private SupplierService supplierService;
 
 	public String persistSupplier(SupplierModel supplierModel){
+		System.out.println("id - " +supplierModel.getId());
+		System.out.println("name - " +supplierModel.getName());
 		supplierService.persistSupplier(supplierModel);
 		return "Added Supplier";
 
