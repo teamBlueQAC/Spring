@@ -37,4 +37,8 @@ public class SupplierService {
 		return suppliers;
 	}
 
+	public List<SupplierModel> getAllSuppliers() {
+		return supplierModelRepository.findAll();
+	}
+
 }

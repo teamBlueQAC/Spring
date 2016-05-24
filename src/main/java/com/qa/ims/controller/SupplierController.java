@@ -25,5 +25,9 @@ public class SupplierController {
 	public List<SupplierModel> findSupplierByName(String name){
 		return supplierService.findSupplierByName(name);
 	}
+	
+	public List<SupplierModel> getAllSuppliers(){
+		return supplierService.getAllSuppliers();
+	}
 
 }
