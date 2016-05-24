@@ -41,4 +41,14 @@ public class SupplierService {
 		return supplierModelRepository.findAll();
 	}
 
+	public void deleteAllSuppliers() {
+		supplierModelRepository.deleteAll();
+		
+	}
+
+	public void deleteSupplier(SupplierModel supplierModel) {
+		supplierModelRepository.delete(supplierModel);
+		
+	}
+
 }

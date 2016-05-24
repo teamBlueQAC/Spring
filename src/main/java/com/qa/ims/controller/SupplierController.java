@@ -29,5 +29,15 @@ public class SupplierController {
 	public List<SupplierModel> getAllSuppliers(){
 		return supplierService.getAllSuppliers();
 	}
+	
+	public void deleteAllSuppliers(){
+		supplierService.deleteAllSuppliers();
+	}
+	
+	public String deleteSupplier(SupplierModel supplierModel){
+		supplierService.deleteSupplier(supplierModel);
+		return "Deleted Supplier";
+		
+	}
 
 }
