@@ -8,8 +8,9 @@ import com.qa.ims.model.SupplierModel;
 public class SupplierModelTest {
 	private SupplierModel supplierModel1;
 	private SupplierModel supplierModel2;
+
 	@Before
-	public void setUp(){
+	public void setUp() {
 		supplierModel1 = new SupplierModel("Supplier of things");
 		supplierModel2 = new SupplierModel("Supplier of stuff");
 	}

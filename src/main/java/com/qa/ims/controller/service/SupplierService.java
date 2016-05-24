@@ -17,8 +17,8 @@ public class SupplierService {
 	@Autowired
 	private SupplierModelRepository supplierModelRepository;
 
-	public void persistSupplier(SupplierModel supplierModel){
-		if(supplierModel != null){
+	public void persistSupplier(SupplierModel supplierModel) {
+		if (supplierModel != null) {
 			supplierModelRepository.save(supplierModel);
 			System.out.println("supplier Saved");
 		}
@@ -27,8 +27,8 @@ public class SupplierService {
 
 	public List<SupplierModel> findSupplierByName(String name) {
 		List<SupplierModel> suppliers = supplierModelRepository.findAll();
-		for(SupplierModel s : suppliers){
-			if(!s.getName().toUpperCase().contains(name.toUpperCase())){
+		for (SupplierModel s : suppliers) {
+			if (!s.getName().toUpperCase().contains(name.toUpperCase())) {
 				suppliers.remove(s);
 			} else {
 				System.out.println("Found Matching Supplier");
@@ -43,12 +43,12 @@ public class SupplierService {
 
 	public void deleteAllSuppliers() {
 		supplierModelRepository.deleteAll();
-		
+
 	}
 
 	public void deleteSupplier(SupplierModel supplierModel) {
 		supplierModelRepository.delete(supplierModel);
-		
+
 	}
 
 }

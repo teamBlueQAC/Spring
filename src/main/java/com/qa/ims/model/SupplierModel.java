@@ -32,13 +32,13 @@ public class SupplierModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public SupplierModel(String name){
+
+	public SupplierModel(String name) {
 		this.name = name;
 	}
-	
-	public SupplierModel(){
-		
+
+	public SupplierModel() {
+
 	}
 
 }

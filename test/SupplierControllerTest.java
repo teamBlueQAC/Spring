@@ -17,15 +17,15 @@ import com.qa.ims.model.repository.SupplierModelRepository;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = App.class)
 public class SupplierControllerTest {
-	
+
 	@Autowired
 	private SupplierController supplierController;
 	@Autowired
 	private SupplierModelRepository supplierRepository;
 	private SupplierModel supplierModel;
-	
+
 	@Before
-	public void setUp(){
+	public void setUp() {
 		supplierModel = new SupplierModel("Test");
 	}
 
@@ -40,6 +40,18 @@ public class SupplierControllerTest {
 	public void testFindSupplierByName() {
 		supplierController.persistSupplier(supplierModel);
 		assertNotNull(supplierController.findSupplierByName("Test"));
+	}
+
+	@Test
+	public void testGetAllSuppliers() {
+		if (supplierController.getAllSuppliers() == null) {
+			System.out.println("Array empty");
+		} else {
+			System.out.println("Array not empty");
+			supplierController.deleteAllSuppliers();
+		}
+		supplierController.persistSupplier(supplierModel);
+		assertNotNull(supplierController.getAllSuppliers());
 	}
 
 }
