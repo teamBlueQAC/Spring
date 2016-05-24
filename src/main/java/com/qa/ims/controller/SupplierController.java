@@ -14,30 +14,30 @@ public class SupplierController {
 	@Autowired
 	private SupplierService supplierService;
 
-	public String persistSupplier(SupplierModel supplierModel){
-		System.out.println("id - " +supplierModel.getId());
-		System.out.println("name - " +supplierModel.getName());
+	public String persistSupplier(SupplierModel supplierModel) {
+		System.out.println("id - " + supplierModel.getId());
+		System.out.println("name - " + supplierModel.getName());
 		supplierService.persistSupplier(supplierModel);
 		return "Added Supplier";
 
 	}
-	
-	public List<SupplierModel> findSupplierByName(String name){
+
+	public List<SupplierModel> findSupplierByName(String name) {
 		return supplierService.findSupplierByName(name);
 	}
-	
-	public List<SupplierModel> getAllSuppliers(){
+
+	public List<SupplierModel> getAllSuppliers() {
 		return supplierService.getAllSuppliers();
 	}
-	
-	public void deleteAllSuppliers(){
+
+	public void deleteAllSuppliers() {
 		supplierService.deleteAllSuppliers();
 	}
-	
-	public String deleteSupplier(SupplierModel supplierModel){
+
+	public String deleteSupplier(SupplierModel supplierModel) {
 		supplierService.deleteSupplier(supplierModel);
 		return "Deleted Supplier";
-		
+
 	}
 
 }
