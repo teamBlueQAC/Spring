@@ -10,5 +10,10 @@ public class StockService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public ArrayList<Stock> search(String term) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -31,12 +31,12 @@ public class StockController {
 		this.stocks = stocks;
 	}
 	
-	public void filterStocks(String filer){
+	public void filterStocks(String term){
 		
 	}
 	
-	public void searchStocks(String filer){
-		
+	public void searchStocks(String term){
+		setStocks(stockService.search(term));
 	}
 	
 	
